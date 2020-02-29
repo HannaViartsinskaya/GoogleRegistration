@@ -39,6 +39,12 @@ public class RunnerRegisterGoogle {
         Assert.assertTrue(newp.size()>0);
 
     }
+@Test(dependsOnMethods={"enterDataToInputAndSubmit"})
+public void testTelField(){
+    List<WebElement>  newphone=driver.findElements(By.className("whsOnd zHQkBf"));
+
+    Assert.assertTrue(newphone.size()>0);
+    }
 
     private static WebElement waitForElementLocatedBy(WebDriver driver, By by){
         return new WebDriverWait(driver,10).until(ExpectedConditions.presenceOfElementLocated(by));
